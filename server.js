@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 let burgers = [
     {
-        "image": "http://localhost:3000/burger-images/1.png",
+        "image": "https://aleksey-bor.github.io/burger-images/1.png",
         "title": "Бургер чеддер & бекон",
         "text": "Котлета из говядины криспи, булочка, томат, сыр Чеддер, грудинка, лук красный, салат айсбер, майонез, кетчуп, сырный соус",
         "price": 8,
@@ -19,7 +19,7 @@ let burgers = [
         "grams": 360
     },
     {
-      "image": "http://localhost:3000/burger-images/2.png",
+      "image": "https://aleksey-bor.github.io/burger-images/2.png",
       "title": "BBQ с беконом и курицей",
       "text": "Булочка бриошь с кунжутом, куриная котлета, сыр чеддер, томат, огурец маринованный, лук маринованный, салат Ромен, бекон, соус BBQ",
       "price": 7,
@@ -27,7 +27,7 @@ let burgers = [
       "grams": 390
       },
       {
-      "image": "http://localhost:3000/burger-images/3.png",
+      "image": "https://aleksey-bor.github.io/burger-images/3.png",
       "title": "Дабл биф бургер",
       "text": "Две говяжьи котлеты, сыр чеддер, салат романо, маринованные огурцы, свежий томат, бекон, красный лук, соус бургер, горчица",
       "price": 10,
@@ -35,7 +35,7 @@ let burgers = [
       "grams": 420
       },
       {
-      "image": "http://localhost:3000/burger-images/4.png",
+      "image": "https://aleksey-bor.github.io/burger-images/4.png",
       "title": "Баварский бургер",
       "text": "Булочка для бургера, говяжья котлета, красный лук, сыр, охотничья колбаска, соус барбекю, соус сырный, салат айсберг",
       "price": 8,
@@ -43,7 +43,7 @@ let burgers = [
       "grams": 360
       },
       {
-      "image": "http://localhost:3000/burger-images/5.png",
+      "image": "https://aleksey-bor.github.io/burger-images/5.png",
       "title": "Бекон чизбургер",
       "text": "Булочка для бургера, говяжья котлета, грудинка, помидор, огурец маринованный, сыр, сырный соус, кетчуп, зелень",
       "price": 8,
@@ -51,7 +51,7 @@ let burgers = [
       "grams": 220
       },
       {
-      "image": "http://localhost:3000/burger-images/6.png",
+      "image": "https://aleksey-bor.github.io/burger-images/6.png",
       "title": "Индиана бургер",
       "text": "Булочка для бургера, котлета куриная, грудинка, яйцо, огурец маринованный, криспи лук, кетчуп, соус сырный, горчица, зелень",
       "price": 9,
@@ -59,7 +59,7 @@ let burgers = [
       "grams": 320
       },
       {
-      "image": "http://localhost:3000/burger-images/7.png",
+      "image": "https://aleksey-bor.github.io/burger-images/7.png",
       "title": "Вегги бургер",
       "text": "Булочка для бургера, вегетарианская котлета, красный лук, сыр, свежий томат, соус барбекю, соус сырный, салат айсберг",
       "price": 8,
@@ -67,7 +67,7 @@ let burgers = [
       "grams": 280
       },
       {
-      "image": "http://localhost:3000/burger-images/8.png",
+      "image": "https://aleksey-bor.github.io/burger-images/8.png",
       "title": "Плаксивый Джо",
       "text": "Булочка для бургера, говяжья котлета, грудинка, помидор, огурец маринованный, красный лук, сыр, перец халапеньо, кетчуп, зелень",
       "price": 7,
@@ -75,7 +75,7 @@ let burgers = [
       "grams": 300
       },
       {
-      "image": "http://localhost:3000/burger-images/9.png",
+      "image": "https://aleksey-bor.github.io/burger-images/9.png",
       "title": "Двойной чиз бургер",
       "text": "Булочка для бургера, две говяжьи котлеты, двойной сыр чеддар, огурец маринованный, криспи лук, кетчуп, соус сырный, горчица, зелень",
       "price": 11,
@@ -83,7 +83,7 @@ let burgers = [
       "grams": 400
       },
       {
-      "image": "http://localhost:3000/burger-images/10.png",
+      "image": "https://aleksey-bor.github.io/burger-images/10.png",
       "title": "Фрешбургер",
       "text": "Булочка для бургера, говяжья котлета, бекон, сыр чеддар, яйцо, салями, соус барбекю, соус сырный, салат айсберг, свежий томат",
       "price": 9,
@@ -91,7 +91,7 @@ let burgers = [
       "grams": 300
       },
       {
-      "image": "http://localhost:3000/burger-images/11.png",
+      "image": "https://aleksey-bor.github.io/burger-images/11.png",
       "title": "Цуккини бургер",
       "text": "Булочка для бургера, вегетарианская котлета из нута, цуккини на гриле, помидор, огурец маринованный, сыр, горчичный соус, кетчуп, зелень",
       "price": 8,
@@ -99,7 +99,7 @@ let burgers = [
       "grams": 320
       },
       {
-      "image": "http://localhost:3000/burger-images/12.png",
+      "image": "https://aleksey-bor.github.io/burger-images/12.png",
       "title": "Двойной бургер чеддар",
       "text": "Булочка для бургера, котлета говяжья, грудинка, красный лук, огурец маринованный, томат, кетчуп, двойной сыр чеддар, горчица, зелень",
       "price": 9,
@@ -110,7 +110,7 @@ let burgers = [
 
 let extraBurgers = [
     {
-        "image": "http://localhost:3000/burger-images/13.png",
+        "image": "https://aleksey-bor.github.io/burger-images/13.png",
         "title": "Блэк Уайт Лайт",
         "text": "Черная и белая булочка для бургера, говяжья котлета, сыр Пармезан, острый соус",
         "price": 12,
@@ -118,7 +118,7 @@ let extraBurgers = [
         "grams": 290
         },
         {
-        "image": "http://localhost:3000/burger-images/14.png",
+        "image": "https://aleksey-bor.github.io/burger-images/14.png",
         "title": "Блэк Уайт Бекон",
         "text": "Черная и белая булочка для бургера, говяжья котлета, Бекон, сыр Чеддар, салат айсберг, соус, огурчик",
         "price": 13,
@@ -126,7 +126,7 @@ let extraBurgers = [
         "grams": 310
         },
         {
-        "image": "http://localhost:3000/burger-images/15.png",
+        "image": "https://aleksey-bor.github.io/burger-images/15.png",
         "title": "Блэк Уайт Макс",
         "text": "Черная и белая булочка для бургера, говяжья котлета, сыр Чеддар, салат айсберг, яйцо, черный соус",
         "price": 16,
@@ -134,7 +134,7 @@ let extraBurgers = [
         "grams": 330
         },
         {
-        "image": "http://localhost:3000/burger-images/16.png",
+        "image": "https://aleksey-bor.github.io/burger-images/16.png",
         "title": "Блэк Стар Лайт",
         "text": "Черная булочка для бургера, куриная котлета, яйцо,салат айсберг, свежий томат, огурец, соус Блэк",
         "price": 13,
@@ -142,7 +142,7 @@ let extraBurgers = [
         "grams": 290
         },
         {
-        "image": "http://localhost:3000/burger-images/17.png",
+        "image": "https://aleksey-bor.github.io/burger-images/17.png",
         "title": "Блэк Стар",
         "text": "Черная булочка для бургера, говяжья котлета, сыр Чеддар, салат айсберг, свежий томат, огурец",
         "price": 14,
@@ -150,7 +150,7 @@ let extraBurgers = [
         "grams": 310
         },
         {
-        "image": "http://localhost:3000/burger-images/18.png",
+        "image": "https://aleksey-bor.github.io/burger-images/18.png",
         "title": "Блэк Стар Макс",
         "text": "Черная булочка для бургера, говяжья котлета, Бекон, Лук, сыр Чеддар, салат айсберг, свежий томат, кетчуп",
         "price": 15,
