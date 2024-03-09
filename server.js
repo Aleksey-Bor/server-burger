@@ -1,13 +1,16 @@
-// Файл server.js или app.js
-const express = require('express');
-const app = express();
-const port = 3000;
+const express = require("express"); // Импортируем Express.js, фреймворк для создания веб-серверов на Node.js.
+const app = express(); // Создаем новый экземпляр Express.js, который мы будем использовать для настройки нашего сервера.
+const port = 3000; // Определяем порт, на котором будет работать наш сервер.
 
-const cors = require('cors');
-app.use(cors());
+const cors = require("cors"); // Импортируем CORS (Cross-Origin Resource Sharing) - промежуточное ПО, которое позволяет нашему серверу обрабатывать запросы с других доменов.
+app.use(cors()); // Добавляем промежуточное ПО CORS к нашему серверу. Это позволяет нашему серверу обрабатывать запросы с других доменов.
 
-app.use(express.static('public'));
+app.use(express.static("public")); // Добавляем промежуточное ПО для обслуживания статических файлов. Это позволяет нашему серверу обслуживать статические файлы (например, HTML, CSS, JavaScript, изображения и т.д.) из каталога 'public'.
 
+const path = require("path"); // Импортируем встроенный модуль Node.js 'path' для работы с путями файлов и директорий.
+app.use(express.json()); // Используем промежуточное ПО express.json() для разбора входящих запросов с JSON-телами. Это позволяет обрабатывать JSON-тела запросов и делает их доступными через req.body.
+app.set("view engine", "ejs"); // Устанавливаем EJS в качестве движка представлений для нашего Express-приложения. Это позволяет нам рендерить EJS-шаблоны.
+app.set("views", path.join(__dirname, "views")); // Устанавливаем путь к каталогу представлений. __dirname - это путь к текущему исполняемому файлу, а 'views' - это имя каталога, где мы храним наши EJS-шаблоны.
 
 let burgers = [
     {
@@ -159,37 +162,44 @@ let extraBurgers = [
         }
 ];
 
+let orders = [];
 
 // Обработчик GET-запроса
-app.get('/burgers-data', (req, res) => {
-    let extra = req.query.extra;
-    if(extra === 'black') {
-        let allBurgers = [...burgers, ...extraBurgers];
-        res.json(allBurgers);
-    } else {
-        res.json(burgers);
-    }
+app.get("/burgers-data", (req, res) => {
+  let extra = req.query.extra;
+  if (extra === "black") {
+    let allBurgers = [...burgers, ...extraBurgers];
+    res.json(allBurgers);
+  } else {
+    res.json(burgers);
+  }
 });
-
-app.get('/', (req, res) => {
-    res.send('Добро пожаловать на сервер IT-School!');
-});
-
-
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-});
-
-
-app.use(express.json());
 
 // Обработчик POST-запроса
-app.post('/burgers-order', (req, res) => {
-    let order = req.body;
+app.post("/burgers-order", (req, res) => {
+  let order = req.body;
 
-    if (order && order.name && order.phone && order.order) {
-        res.json({"success": 1, "message": "Спасибо за заказ. Мы скоро свяжемся с вами!"});
-    } else {
-        res.status(400).json({"success": 0, "message": "Ошибка: неполные данные заказа."});
-    }
+  if (order && order.name && order.phone && order.order) {
+    orders.push(order);
+    res.json({
+      success: 1,
+      message: "Спасибо за заказ. Мы скоро свяжемся с вами!",
+    });
+  } else {
+    res
+      .status(400)
+      .json({ success: 0, message: "Ошибка: неполные данные заказа." });
+  }
+});
+
+app.get("/", (req, res) => {
+  res.render("index", {
+    orders: orders,
+    message1: "Добро пожаловать на сервер IT-School!",
+    message2: "В нашу бургерную поступили следующие заказы:",
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1><%= message1 %></h1>
+    <h2><%= message2 %></h2>
+    <% orders.forEach(function(order) { %>
+      <h3>Заказ: <%= order.order %></h3>
+      <p>Имя: <%= order.name %></p>
+      <p>Телефон: <%= order.phone %></p>
+  <% }); %>
+</body>
+</html>
