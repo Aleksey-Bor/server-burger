@@ -159,6 +159,8 @@ let extraBurgers = [
         }
 ];
 
+
+// Обработчик GET-запроса
 app.get('/burgers-data', (req, res) => {
     let extra = req.query.extra;
     if(extra === 'black') {
@@ -176,4 +178,18 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
+});
+
+
+app.use(express.json());
+
+// Обработчик POST-запроса
+app.post('/burgers-order', (req, res) => {
+    let order = req.body;
+
+    if (order && order.name && order.phone && order.order) {
+        res.json({"success": 1, "message": "Спасибо за заказ. Мы скоро свяжемся с вами!"});
+    } else {
+        res.status(400).json({"success": 0, "message": "Ошибка: неполные данные заказа."});
+    }
 });
