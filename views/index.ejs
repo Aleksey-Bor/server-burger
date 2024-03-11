@@ -11,5 +11,15 @@
       <p>Имя: <%= order.name %></p>
       <p>Телефон: <%= order.phone %></p>
   <% }); %>
+
+  <script>
+    let interval = 30000; 
+      
+    function refreshPage() {
+        location.reload();
+    }   
+
+    setInterval(refreshPage, interval);
+  </script>
 </body>
 </html>
